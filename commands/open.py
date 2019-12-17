@@ -33,7 +33,7 @@ def open(player_id, command):
         cur.execute('INSERT games(type, host_id, description, starting_time) VALUES (\'o\', %s, %s, NOW());', (player_id, description))
         cur.execute('SELECT MAX(game_id) FROM games')
         new_id = cur.fetchone()[0]
-        message = 'Игра успешно открыта.\nID игры в системе: {0}\nОписание: {1}'.format(new_id, description)
+        message = 'Игра успешно открыта.\nID игры в системе: {0}\nОписание:{1}'.format(new_id, description)
         return [message]
 
 
